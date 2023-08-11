@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
   
   formularioLogin:FormGroup;
   ocultarPassword:boolean = true;
-  mostrarLoading:boolean = true;
+  mostrarLoading:boolean = false;
 
   constructor(
     private formBuilder:FormBuilder,
@@ -62,10 +62,6 @@ iniciarSesion(){
     error:()=>{
       this._utilidadServicio.mostrarAlerta("Hubo un error","Opps!")
     }
-
-
-
-
   })
 
 
