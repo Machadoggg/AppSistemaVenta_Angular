@@ -38,7 +38,7 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput [type]="ocultarPassword ? 'password':'text'" formControlName="password">
+                    <input matInput [type]="ocultarPassword ? 'password':'text'" formControlName="clave">
 
                     <button mat-icon-button matSuffix (click)="ocultarPassword = !ocultarPassword" type="button">
                         <mat-icon matSuffix>{{ocultarPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -66,8 +66,7 @@
 
 <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close color="warn">Volver</button>
-    <button mat-raised-button color="primary"
-        [disabled]="formularioUsuario.invalid"
-        (click)="guardarEditar_Usuario()"
-    >{{botonAccion}}</button>
+    <button mat-raised-button color="primary" [disabled]="formularioUsuario.invalid" (click)="guardarEditar_Usuario()">
+        {{botonAccion}}
+    </button>
 </mat-dialog-actions>

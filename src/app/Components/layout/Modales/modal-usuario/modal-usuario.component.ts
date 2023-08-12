@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -62,19 +62,19 @@ export class ModalUsuarioComponent implements OnInit {
   
   ngOnInit(): void {
     
-    if(this.datosUsuario != null)
+    if(this.datosUsuario != null){
 
-    this.formularioUsuario.patchValue({
+      this.formularioUsuario.patchValue({
 
-      nombreCompleto:this.datosUsuario.nombreCompleto,
-      correo:this.datosUsuario.correo,
-      idRol:this.datosUsuario.idRol,
-      clave:this.datosUsuario.clave,
-      esActivo:this.datosUsuario.esActivo.toString()
-    })
+        nombreCompleto:this.datosUsuario.nombreCompleto,
+        correo:this.datosUsuario.correo,
+        idRol:this.datosUsuario.idRol,
+        clave:this.datosUsuario.clave,
+        esActivo:this.datosUsuario.esActivo.toString()
+      })
+    }
+
   }
-
-
 
   guardarEditar_Usuario(){
     const _usuario: Usuario = {
@@ -84,7 +84,7 @@ export class ModalUsuarioComponent implements OnInit {
       idRol:this.formularioUsuario.value.idRol,
       rolDescripcion:"",
       clave:this.formularioUsuario.value.clave,
-      esActivo:parseInt(this.formularioUsuario.value.esActivo)
+      esActivo:parseInt(this.formularioUsuario.value.esActivo),
     }
 
     //CREAR
@@ -94,10 +94,10 @@ export class ModalUsuarioComponent implements OnInit {
         next:(data) => {
           if(data.status){
             this._utilidadServicio.mostrarAlerta("El usuario fue registrado", "Exito");
-            this.modalActual.close("true");
+            this.modalActual.close("true")
           }
           else
-            this._utilidadServicio.mostrarAlerta("Ne se pudo registrar el usuario", "Error");
+            this._utilidadServicio.mostrarAlerta("Ne se pudo registrar el usuario", "Error")
           
         },
         error:(e) => {}
@@ -108,12 +108,11 @@ export class ModalUsuarioComponent implements OnInit {
       this._usuarioServicio.editar(_usuario).subscribe({
         next:(data) => {
           if(data.status){
-            this._utilidadServicio.mostrarAlerta("El usuario fue editado", "Exito");
+            this._utilidadServicio.mostrarAlerta("El usuario fue editado","Exito");
             this.modalActual.close("true");
           }
           else
-            this._utilidadServicio.mostrarAlerta("Ne se pudo editar el usuario", "Error");
-          
+            this._utilidadServicio.mostrarAlerta("Ne se pudo editar el usuario","Error") 
         },
         error:(e) => {}
       })
@@ -125,6 +124,6 @@ export class ModalUsuarioComponent implements OnInit {
   }
 
   
-
-
 }
+
+

@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 export class UsuarioComponent implements OnInit, AfterViewInit{
 
   //variables
-  columnasTabla:string[]= ['nombrecompleto','correo','rolDescripcion','estado','acciones'];
+  columnasTabla:string[]= ['nombreCompleto','correo','rolDescripcion','estado','acciones'];
 
   //Data usuarios
   dataInicio:Usuario[] = [];
@@ -57,7 +57,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
   }
 
   
-  AplicaFiltroTabla(event:Event){
+  AplicarFiltroTabla(event:Event){
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataListaUsuarios.filter = filterValue.trim().toLocaleLowerCase();
   }
