@@ -15,7 +15,7 @@ export class RolService {
   constructor(private http:HttpClient) { }
 
 
-  list():Observable<ResponseApi>{
+  lista():Observable<ResponseApi>{
     return this.http.get<ResponseApi>(`${this.urlApi}Lista`)
   }
 

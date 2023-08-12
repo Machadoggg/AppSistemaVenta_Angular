@@ -49,7 +49,7 @@ export class ModalUsuarioComponent implements OnInit {
       this.botonAccion = "Actualizar";
     }
 
-    this._rolServicio.list().subscribe({
+    this._rolServicio.lista().subscribe({
       next:(data) => {
         if(data.status) this.listaRoles = data.value
       },

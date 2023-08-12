@@ -23,7 +23,7 @@ export class UsuarioService {
   }
 
 
-  list():Observable<ResponseApi>{
+  lista():Observable<ResponseApi>{
     return this.http.get<ResponseApi>(`${this.urlApi}Lista`)
   }
 
