@@ -18,7 +18,7 @@ export class ProductoService {
 
   
 
-  list():Observable<ResponseApi>{
+  lista():Observable<ResponseApi>{
     return this.http.get<ResponseApi>(`${this.urlApi}Lista`)
   }
 
@@ -33,7 +33,7 @@ export class ProductoService {
   }
 
 
-  elininar(id:number):Observable<ResponseApi>{
+  eliminar(id:number):Observable<ResponseApi>{
     return this.http.delete<ResponseApi>(`${this.urlApi}Eliminar/${id}`)
   }
 }

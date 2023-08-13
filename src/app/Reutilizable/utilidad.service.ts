@@ -18,7 +18,9 @@ export class UtilidadService {
     this._snackBar.open(mensaje,tipo,{
       horizontalPosition:"end",
       verticalPosition:"top",
-      duration:3000
+      duration:3000,
+      // panelClass: ['mat-toolbar', 'mat-']
+      panelClass: ['blue-snackbar']
     })
 
   }
