@@ -18,7 +18,7 @@ export class VentaService {
 
 
 
-  registrar(request: Venta):Observable<ResponseApi>{
+  registrar(request:Venta):Observable<ResponseApi>{
     return this.http.post<ResponseApi>(`${this.urlApi}Registrar`, request)
   }
 

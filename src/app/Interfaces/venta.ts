@@ -4,7 +4,7 @@ export interface Venta {
     idVenta?:number,
     numeroDocumento?:string,
     tipoPago:string,
-    fechaRegistro:string,
+    fechaRegistro?:string,
     totalTexto:string,
-    detalleVenta:DetalleVenta
+    detalleVenta:DetalleVenta[]
 }
