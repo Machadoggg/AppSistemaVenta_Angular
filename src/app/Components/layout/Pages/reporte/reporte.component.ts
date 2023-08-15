@@ -39,7 +39,6 @@ export class ReporteComponent implements OnInit, AfterViewInit{
   formularioFiltro:FormGroup;
   listaVentasReporte:Reporte[] = [];
   columnasTabla:string[] = ['fechaRegistro','numeroVenta','tipoPago','total','producto','cantidad','precio','totalProducto'];
-  dataInicio:Reporte[]= [];
   datosVentaReporte = new MatTableDataSource(this.listaVentasReporte);
   @ViewChild(MatPaginator) paginacionTabla! : MatPaginator;
 
