@@ -6,7 +6,16 @@
         <button mat-icon-button (click)="sidenav.toggle();">
             <mat-icon>menu</mat-icon>
         </button>
-        <!-- menu hamburguesa -->
+       
+        <!-- user and rol -->
+        <span style="flex: 1 1 auto;"></span>
+        <label style="font-size: 14px; margin-right: 20px;">
+            {{correoUsuario}} | {{rolUsuario}}
+        </label>
+
+        <button mat-icon-button (click)="cerrarSesion()">
+            <mat-icon>logout</mat-icon>
+        </button>
 
     </mat-toolbar-row>
 </mat-toolbar>

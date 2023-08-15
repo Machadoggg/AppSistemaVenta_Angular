@@ -33,7 +33,7 @@ export class UtilidadService {
   }
 
 
-  obtenerSesionUsuario(usuarioSesion:Sesion){
+  obtenerSesionUsuario(){
 
     const dataCadena = localStorage.getItem("usuario");
 

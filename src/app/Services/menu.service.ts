@@ -15,7 +15,7 @@ export class MenuService {
   constructor(private http:HttpClient) { }
 
 
-  list(idUsuario:number):Observable<ResponseApi>{
+  lista(idUsuario:number):Observable<ResponseApi>{
     return this.http.get<ResponseApi>(`${this.urlApi}Lista?idUsuario=${idUsuario}`)
   }
 }
