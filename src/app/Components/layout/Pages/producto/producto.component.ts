@@ -96,7 +96,7 @@ export class ProductoComponent implements OnInit, AfterViewInit{
          this._productoServicio.eliminar(producto.idProducto).subscribe({
            next:(data) => {
  
-             if(data.status){
+             if(data.value){
                this._utilidadServicio.mostrarAlerta("El producto fue eliminado", "Listo!");
                this.obtenerProductos();
              }

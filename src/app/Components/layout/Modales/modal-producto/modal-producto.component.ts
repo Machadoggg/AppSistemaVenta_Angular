@@ -49,7 +49,7 @@ export class ModalProductoComponent implements OnInit {
 
     this._categoriaServicio.lista().subscribe({
       next:(data) => {
-        if(data.status) this.listaCategorias = data.value
+        if(data.value) this.listaCategorias = data.value
       },
       error:(e) =>{}
     });
@@ -90,7 +90,7 @@ export class ModalProductoComponent implements OnInit {
 
       this._productoServicio.guardar(_producto).subscribe({
         next:(data) => {
-          if(data.status){
+          if(data.value){
             this._utilidadServicio.mostrarAlerta("El producto fue registrado", "Exito");
             this.modalActual.close("true")
           }
@@ -105,7 +105,7 @@ export class ModalProductoComponent implements OnInit {
 
       this._productoServicio.editar(_producto).subscribe({
         next:(data) => {
-          if(data.status){
+          if(data.value){
             this._utilidadServicio.mostrarAlerta("El producto fue editado","Exito");
             this.modalActual.close("true");
           }

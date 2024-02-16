@@ -51,7 +51,7 @@ export class ModalUsuarioComponent implements OnInit {
 
     this._rolServicio.lista().subscribe({
       next:(data) => {
-        if(data.status) this.listaRoles = data.value
+        if(data.value) this.listaRoles = data.value
       },
       error:(e) =>{}
     })
@@ -92,7 +92,7 @@ export class ModalUsuarioComponent implements OnInit {
 
       this._usuarioServicio.guardar(_usuario).subscribe({
         next:(data) => {
-          if(data.status){
+          if(data.value){
             this._utilidadServicio.mostrarAlerta("El usuario fue registrado", "Exito");
             this.modalActual.close("true")
           }
@@ -107,7 +107,7 @@ export class ModalUsuarioComponent implements OnInit {
 
       this._usuarioServicio.editar(_usuario).subscribe({
         next:(data) => {
-          if(data.status){
+          if(data.value){
             this._utilidadServicio.mostrarAlerta("El usuario fue editado","Exito");
             this.modalActual.close("true");
           }

@@ -135,7 +135,7 @@ export class VentaComponent implements OnInit {
       this._ventaServicio.registrar(request).subscribe({
         next:(response) => {
           
-          if(response.value){
+          if(response.status){
             this.totalPagar = 0.00;
             this.listaProductosParaVenta = [];
             this.datosDetalleVenta = new MatTableDataSource(this.listaProductosParaVenta);
