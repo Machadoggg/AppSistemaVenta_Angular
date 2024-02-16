@@ -48,7 +48,7 @@ iniciarSesion(){
 
   this._usuarioServicio.iniciarSesion(request).subscribe({
     next: (data) => {
-      if(data.status){
+      if(data.value){
         this._utilidadServicio.guardarSesionUsuario(data.value);
         this.router.navigate(["pages"])
       }

@@ -35,7 +35,7 @@ export class LayoutComponent implements OnInit {
 
       this._menuServicio.lista(usuario.idUsuario).subscribe({
         next:(data) => {
-          if(data.status) 
+          if(data.value) 
             this.listaMenus = data.value;
         },
         error:(e)=>{}

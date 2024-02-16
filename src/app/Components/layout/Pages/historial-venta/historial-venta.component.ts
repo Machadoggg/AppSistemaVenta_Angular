@@ -116,7 +116,7 @@ datosListaVenta = new MatTableDataSource(this.dataInicio);
     ).subscribe({
       next:(data) => {
 
-        if(data.status)
+        if(data.value)
           this.datosListaVenta = data.value;
         else
           this._utilidadServicio.mostrarAlerta("No se encontraron datos","Oops!")

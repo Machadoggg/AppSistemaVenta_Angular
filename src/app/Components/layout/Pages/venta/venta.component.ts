@@ -57,7 +57,7 @@ export class VentaComponent implements OnInit {
 
     this._productoServicio.lista().subscribe({
       next:(data) => {
-        if(data.status){
+        if(data.value){
           const lista = data.value as Producto[];
           this.listaProductos = lista.filter(p => p.esActivo == 1 && p.stock > 0);
         }
@@ -135,7 +135,7 @@ export class VentaComponent implements OnInit {
       this._ventaServicio.registrar(request).subscribe({
         next:(response) => {
           
-          if(response.status){
+          if(response.value){
             this.totalPagar = 0.00;
             this.listaProductosParaVenta = [];
             this.datosDetalleVenta = new MatTableDataSource(this.listaProductosParaVenta);

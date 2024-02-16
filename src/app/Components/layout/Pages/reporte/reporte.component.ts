@@ -85,7 +85,7 @@ export class ReporteComponent implements OnInit, AfterViewInit{
         _fechaFin
       ).subscribe({
         next:(data) => {
-          if(data.status){
+          if(data.value){
             this.listaVentasReporte = data.value;
             this.datosVentaReporte = data.value;
           }

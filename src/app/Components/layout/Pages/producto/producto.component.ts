@@ -38,7 +38,7 @@ export class ProductoComponent implements OnInit, AfterViewInit{
     obtenerProductos(){
      this._productoServicio.lista().subscribe({
        next:(data) => {
-         if(data.status)
+         if(data.value)
            this.dataListaProductos.data = data.value;
          else
            this._utilidadServicio.mostrarAlerta("No se encontraron datos","Oops!")

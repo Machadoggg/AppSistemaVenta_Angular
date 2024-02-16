@@ -60,7 +60,7 @@ mostrarGrafico(labelGrafico:any[],dataGrafico:any[]){
     this._dashboardServicio.resumen().subscribe({
 
       next:(data) => {
-        if(data.status){
+        if(data.value){
           this.totalIngresos = data.value.totalIngresos;
           this.totalVentas = data.value.totalVentas;
           this.totalProductos = data.value.totalProductos;

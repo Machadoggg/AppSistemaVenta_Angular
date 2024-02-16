@@ -38,7 +38,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
    obtenerUsuarios(){
     this._usuarioServicio.lista().subscribe({
       next:(data) => {
-        if(data.status)
+        if(data.value)
           this.dataListaUsuarios.data = data.value;
         else
           this._utilidadServicio.mostrarAlerta("No se encontraron datos","Oops!")
@@ -96,7 +96,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit{
         this._usuarioServicio.elininar(usuario.idUsuario).subscribe({
           next:(data) => {
 
-            if(data.status){
+            if(data.value){
               this._utilidadServicio.mostrarAlerta("El usuario fue eliminado", "Listo!");
               this.obtenerUsuarios();
             }
